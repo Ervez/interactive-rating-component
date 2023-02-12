@@ -75,6 +75,7 @@ body{
                     cursor: pointer;
                     padding: 10px 10px 5px 11px;
                     transition: all 0.3s ease-in-out;
+                    font-weight: 600;
                 }
 
                 .ratingButton:hover{
@@ -111,10 +112,63 @@ body{
         }
         div.containerThankState{
             display: none;
+            .thankStateItems{
+                display: grid;
+                justify-content: center;
+                justify-items: center;
+                text-align: center;
+                .ratingValueMain{
+                    background-color: @idk;
+                    width: fit-content;
+                    border-radius: 50px;
+                    color: @Orange;
+                    font-size: 15px;
+                    display: flex;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    align-items: center;
+                    margin-top: 30px;
+                    p{
+                        margin-top: 5px;
+                    }
+                }
+                .thankYouTxt{
+                    font-size: 30px;
+                    font-weight: 600;
+                    margin-top: 30px;
+                }
+                .thanksLongTxt{
+                    color: @Light;
+                    margin-top: 30px;
+                }
+                
+            }
+            
         }
     }
 
     .attribution{
         margin-top: 5vh;
+    }
+
+    .shake {
+        animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    }
+    
+    @keyframes shake {
+        10%, 90% {
+            transform: translateX(-1px);
+        }
+        20%, 80% {
+            transform: translateX(2px);
+        }
+        30%, 50%, 70% {
+            transform: translateX(-4px);
+        }
+        40%, 60% {
+            transform: translateX(4px);
+        }
     }
 }
