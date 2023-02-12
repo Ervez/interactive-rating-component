@@ -1,6 +1,7 @@
 $(function(){
     const ratingButtons = [...$(".ratingButton")];
     let isRatingClicked = false;
+    let ratingVal;
     ratingButtons.forEach(button =>{
         button.addEventListener('click', raingClicked);
     })
@@ -10,12 +11,14 @@ $(function(){
         let currentRatingSelected = event.target;
         $(currentRatingSelected).addClass('ratingButtonSelected');
         isRatingClicked = true;
+        ratingVal = ($(currentRatingSelected).text());
     }
 
     $( ".submitButton" ).click(function() {
         if(isRatingClicked == false){
             shakeElement(this);
         }else{
+            $('#ratingValueTxt').text('You selected '+ ratingVal +' out of 5');
             $('.containerMain').fadeOut();
             setTimeout(() => {
                 $('.containerThankState').fadeIn();
