@@ -13,6 +13,8 @@
 @Very: hsl(216, 12%, 8%);
 @idk: #3c444c;
 @Orange: hsl(25, 97%, 53%);
+@mobile:    ~"only screen and (min-width: 320px) and (max-width: 786px)";
+
 body{
     background-color: @Very;
     color: white;
@@ -169,6 +171,46 @@ body{
         }
         40%, 60% {
             transform: translateX(4px);
+        }
+    }
+}
+
+@media @mobile{
+    body{
+        div.container{
+            width: 300px;
+
+            div.containerMain{
+               display: block;
+                h1{
+                    margin-bottom: 10px;
+                }
+               .ratingButtons{
+                width: 100%;
+                .ratingButton{
+                    width: 40px;
+                    height: 40px;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                    font-size: 15px;
+                    cursor: pointer;
+                    padding: 8px 10px 5px 11px;
+                    transition: all 0.3s ease-in-out;
+                    font-weight: 600;
+                }
+
+                .ratingButton:hover{
+                    background-color: @Orange;
+                    color: white;
+                }
+
+                .ratingButtonSelected{
+                    background-color: @Light;
+                    color: white;
+                }
+            }
+
+            }
         }
     }
 }
